@@ -1,0 +1,228 @@
+<script id="signup" type="text/html">
+	<div class="jumbotron text-center">
+		<title>IREPORT: Signup</title>
+		<h1>SIGNUP</h1>
+	</div>
+	<form id="myForms">
+		<div class="container">
+			<div class="form-group">
+				<label>Username:</label><br>
+				<input id="username" type="text" name="username" class="form-control" placeholder="Enter Username" value=""><br>
+			</div>
+			<div class="form-group">
+				<label>Name:</label><br>
+				<input id="name" type="text" name="name" class="form-control" placeholder="Enter Name" value=""><br>
+			</div>
+			<div class="form-group">
+				<label>Course:</label><br>
+				<input id="course" type="text" name="course" class="form-control" placeholder="Enter Course" value="comsci"><br>
+			</div>
+			<div class="form-group">
+				<label>Email:</label><br>
+				<input id="email" type="text" name="email" class="form-control" placeholder="Enter Email" value="d@g.com"><br>
+			</div>
+			<div class="form-group">
+				<label>Password:</label><br>
+				<input id="password" type="password" name="password" class="form-control" placeholder="Enter Password" value="dale"><br>
+			</div>
+			<div class="form-group">
+				<label>Confirm Password:</label><br>
+				<input id="confirm-password" type="password" name="confirm-password" class="form-control" placeholder="Enter Confirm Password" value="dale"><br><br>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+		</div>
+	</form>
+</script>
+
+<script id="login" type="text/html">
+	<div class="jumbotron text-center">
+		<title>IREPORT: Login</title>
+		<h1>LOGIN</h1>
+	</div>
+	<form id="loginForms">
+		<div class="container">
+			<div class="form-group">
+				<label>Username:</label><br>
+				<input id="username" type="text" name="username" class="form-control" placeholder="Username"><br>
+			</div>
+			<div class="form-group">
+				<label>Password:</label><br>
+				<input id="password" type="password" name="password" class="form-control" placeholder="Password"><br><br>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+		</div>
+	</form>
+</script>
+
+<script id="blog" type="text/html">
+	<div class="header">
+		<title>IREPORT: Homepage</title>
+		<h1>Blog Name</h1>
+		<button class="btn btn-success" data-toggle="modal" data-target="#myModal"> Create Post </button>
+	</div>
+
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Create Post</h3>
+					<span class="close" data-dismiss="modal">&times;</span>
+				</div>
+				<form id="post">
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Blog Title:</label>
+							<input id="blog_title" type="text" name="blog_title" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Blog Content:</label>
+							<textarea id="blog_content" type="text" name="blog_content" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success">Post</button>
+						<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="leftcolumn">
+			<div id="output"></div>
+			<div class="card">
+				<h2>Title Heading</h2>
+	            <h5>Title description, Dec 07, 2017 </h5>
+	            <div class="fakeimg" style="height: 200px;">Image</div>
+	            <p>Some text..</p>
+	            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			</div>
+			<div class="card">
+				<h2>Title Heading</h2>
+	            <h5>Title description, Dec 07, 2017 </h5>
+	            <div class="fakeimg" style="height: 200px;">Image</div>
+	            <p>Some text..</p>
+	            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			</div>
+		</div>
+		<div class="rightcolumn">
+			<div class="card">
+				<h2>Search</h2>
+				<input type="text" id="search" placeholder="Enter keyword" class="form-control"><br>
+			</div>
+			<div class="card">
+				<h3>Sign In</h3>
+				<label>Username:</label>
+				<input type="text" name="username" id="username" placeholder="Enter Username" class="form-control">
+				<label>Password:</label>
+				<input type="password" name="password" id="password" placeholder="Enter Password" class="form-control">
+				<br>
+			</div>
+			<div class="card">
+				<h3>Popular Post</h3>
+		        <div class="fakeimg">Image</div><br>
+		        <div class="fakeimg">Image</div><br>
+		        <div class="fakeimg">Image</div>
+			</div>
+			<div class="card">
+				<h3>Follow Me</h3>
+				<p>Some text..</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<h2>Footer</h2>
+	</div>
+</script>
+
+<script id="forget" type="text/html">
+	<div class="jumbotron text-center">
+		<title>IREPORT: Forget Password</title>
+		<h1>FORGET PASSWORD</h1>
+	</div>
+	<form>
+		<div class="container">
+			<div class="form-group">
+				<p>Enter email to send new password to your account.</p>
+			</div>
+			<div class="form-group">
+				<label>Email:</label><br>
+				<input id="email" type="text" name="email" class="form-control" placeholder="Email"><br><br>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+		</div>
+	</form>
+</script>
+
+<script id="blogdisplay" type="text/html">
+	<div class="header">
+		<title>IREPORT: Report Display</title>
+		<h1>Report Display</h1>
+		<div id="functional" class="functional">
+			<button id="updateblog" class="btn btn-default">Updates</button>
+			<button id="deleteblog" class="btn btn-danger">Delete</button>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div id="blogclickbyuser" align="center"></div>
+	</div>
+
+	<div class="panel-body">
+		<div id="blogcontent" class="col-md-12">
+			<div class="card">
+				{{#blog}}
+				<h1>{{title}}</h1>
+				<p>{{content}}</p>
+				<small>Authored by: <strong>{{author}}</strong></small>
+				<br>
+				<small>Date Created: {{dateCreated}}</small>
+				{{/blog}}
+			</div>
+		</div>
+		<br>
+
+		<div id="commentsarea" class="commentsarea">
+				<form id="comments" name ="comments">
+					<div class = "form-group">
+						<h3>Comments</h3>
+						<div id ="commentsbyuser"></div>
+						<textarea class="form-control" name ="commentsection" id ="commentsection" placeholder="Comments"></textarea>
+						<button id = "comment" type="submit" class="btn btn-primary" name="comment" col-md-6 align = "left">Comment</button>
+					</div>
+				</form>
+			</div>
+		<div class="form-group">
+			<button id="backHome" name="backHome" class="btn main">Back to Home</button>
+			<button id="logout" name="logout" class="btn Exit"></button>
+		</div>
+	</div>
+</script>
+
+<script id="admin" type="text/html">
+	<div class="header">
+		<title>IREPORT: Administrator</title>
+			<h1 align="center">Administrator Panel</h1>
+	</div>
+	<div class="form-group">
+		<button id="logout" class="btn btn-danger">Log Out</button>
+		<button id="profile" class="btn btn-default">Profile</button>
+		<button id="homepage" class="btn btn-secondary">Homepage</button>
+	</div>
+
+	<div class="table" id="post-table">
+		<table id="blogposted">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Content</th>
+					<th>Date Created</th>
+					<th>Date Modified</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</script>

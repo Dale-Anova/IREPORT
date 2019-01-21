@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>iReport: A web based application for student concern in cvsu - main campus</title>
+    <link rel="stylesheet" type="text/css" href="css/blog.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Blog Name</h1>
+      <button class="btn btn-success" data-toggle="modal" data-target="#myModal"> Create Post </button>
+    </div>
+
+    <!-- create post modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Create Post</h3>
+            <span class="close" data-dismiss="modal">&times;</span>
+            </div>
+            <form id="post">
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Blog Title: </label>
+                  <input id="blog_title" type="text" name="blog_title" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Blog Content: </label>
+                  <textarea id="blog_content" type="text" name="blog_content" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Post</button>
+                <button class="btn btn-default" data-dismiss="modal"> Close</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h2>Title Heading</h2>
+            <h5>Title description, Dec 07, 2017 </h5>
+            <div class="fakeimg" style="height: 200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+          </div>
+          <div class="card">
+            <h2>Title Heading</h2>
+            <h5>Title description, Dec 07, 2017 </h5>
+            <div class="fakeimg" style="height: 200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+          </div>
+          <div id="output" class="card"></div>
+        </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>About Me</h2>
+          <div class="fakeimg" style="height: 100px;">Image</div>
+          <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        </div>
+        <div class="card">
+          <h3>Popular Post</h3>
+          <div class="fakeimg">Image</div><br>
+          <div class="fakeimg">Image</div><br>
+          <div class="fakeimg">Image</div>
+        </div>
+        <div class="card">
+          <h3>Follow Me</h3>
+          <p>Some text..</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>Footer</h2>
+    </div>
+  </body>
+</html>
