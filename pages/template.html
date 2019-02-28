@@ -57,7 +57,7 @@
 <script id="blog" type="text/html">
 	<div class="header">
 		<title>IREPORT: Homepage</title>
-		<h1>Blog Name</h1>
+		<h1>Report Page</h1>
 		<button class="btn btn-success" data-toggle="modal" data-target="#myModal"> Create Post </button>
 	</div>
 
@@ -65,17 +65,17 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h3>Create Post</h3>
+					<h3>Create Report</h3>
 					<span class="close" data-dismiss="modal">&times;</span>
 				</div>
 				<form id="post">
 					<div class="modal-body">
 						<div class="form-group">
-							<label>Blog Title:</label>
+							<label>Report Title (optonal):</label>
 							<input id="blog_title" type="text" name="blog_title" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Blog Content:</label>
+							<label>Report Content:</label>
 							<textarea id="blog_content" type="text" name="blog_content" class="form-control"></textarea>
 						</div>
 					</div>
@@ -177,6 +177,7 @@
 				<small>Authored by: <strong>{{author}}</strong></small>
 				<br>
 				<small>Date Created: {{dateCreated}}</small>
+				<br>
 				{{/blog}}
 			</div>
 		</div>
