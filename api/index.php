@@ -1,6 +1,23 @@
 <?php
+namespace Tests\TextAnalysis\Analysis\Keywords;
+use TextAnalysis\Documents\TokensDocument;
+use TextAnalysis\Documents\DocumentAbstract;
+use TextAnalysis\Collections\DocumentArrayCollection;
+use TextAnalysis\Tokenizers\GeneralTokenizer;
+use TextAnalysis\Indexes\TfIdf;
+use TextAnalysis\Analysis\FreqDist;
+use TextAnalysis\Analysis\Keywords\Rake;
+use TextAnalysis\NGrams\NGramFactory;
+
+
+
 require 'connection.php';
 require 'Slim/Slim.php';
+// require 'TfIdf.php';
+// spl_autoload_register(function($TfIdf){
+	// include $TfIdf . '.php';
+// });
+require_once('../vendor/autoload.php');
 require 'functions.php';
 
 
@@ -71,17 +88,27 @@ $app->get("/blogpost/", function() {
 	if($results) {
 		foreach ($results as $response) {
 			$text = my_truncate($response['blog_content'], 200);
+			$corpus = ($response['blog_content']);
+			$token = tokenize($corpus);
+			$rake = rake($token, 2);
+			$results = $rake->getKeywordScores();
+			$rakeResult = testRake($response['blog_content']);
+
 			$data[] = array(
 				"uid"=>$response['uid'],
 				"Title"=> $response['blog_title'],
 			  	"Author"=> $response['blog_creator'],
 			  	"Content"=> $text, 
 			  	"DateCreated"=> $response['blog_created'],
-			  	"DateModified"=> $response['blog_modified']
+			  	"DateModified"=> $response['blog_modified'],
+			  	"Tags"=>$rakeResult
 			);	
 		}
 	}
-	echo json_encode($data);
+
+	// $var = new TfIdf($data);
+	echo json_encode( $data );
+	// echo json_encode($data);
 });
 
 $app->get('/blogdisplay/:uid', function ($u_id) {
@@ -89,6 +116,7 @@ $app->get('/blogdisplay/:uid', function ($u_id) {
 	$results = display_blog($u_id);
 
 	if($results) {
+	$rakeResult = testRake($results['blog_content']);
 		$response = array(
 			'uid'=> $results['uid'],
 		  	'title'=> $results['blog_title'], 
@@ -96,7 +124,8 @@ $app->get('/blogdisplay/:uid', function ($u_id) {
 		  	'author'=> $results['blog_creator'],
 		  	'dateCreated'=> $results['blog_created'],
 		  	'dateModified'=> $results['blog_modified'],
-		  	'Status'=> $results['status']
+		  	'Status'=> $results['status'],
+		  	"Tags"=>$rakeResult
 		);
 	}
 	echo json_encode($response);

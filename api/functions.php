@@ -1,4 +1,13 @@
 <?php
+use TextAnalysis\Analysis\Keywords\Rake;
+use TextAnalysis\Documents\TokensDocument;
+use TextAnalysis\Filters\LowerCaseFilter;
+use TextAnalysis\Filters\StopWordsFilter;
+use TextAnalysis\Tokenizers\GeneralTokenizer;
+use TextAnalysis\Filters\SpacePunctuationFilter;
+use TextAnalysis\Filters\PunctuationFilter;
+use TextAnalysis\Filters\CharFilter;
+
 function sample(){
 	echo "Sample Functions";
 }
@@ -60,8 +69,6 @@ function read_blogs(){
 	->where("status", 1)
 	->order_by_desc('id')
 	->find_many();
-
-	// $text = my_truncate($data, 300);
 		
 	return $data;
 }
@@ -182,4 +189,39 @@ function my_truncate($string, $limit, $break=".", $pad=" [...]")
 
   return $string;
 }
+
+function term_frequency($string){
+	$nwords = str_word_count($string, 0); //no of words in a document
+	$words = str_word_count($string, 1); //words in document
+	$tfreq = array_count_values($words); //how often does word appear in document
+	// $term_weight = [];
+
+	// $term_weight = array_values($tfreq) / $nwords;
+	// return $term_weight;
+	// $print = print_r($tfreq, true);
+	$token = tokenize($string);
+	return $token;
+
+}
+
+function testRake($token)
+    {
+        $stopwords = array_map('trim', file('vendor/yooper/stop-words/data/stop-words_english_1_en.txt'));
+        // all punctuation must be moved 1 over. Fixes issues with sentences
+        $testData = (new SpacePunctuationFilter([':','\/']))->transform($token);
+        //rake MUST be split on whitespace and new lines only
+        $tokens = (new GeneralTokenizer(" \n\t\r"))->tokenize($testData);        
+        $tokenDoc = new TokensDocument($tokens);
+        $tokenDoc->applyTransformation(new LowerCaseFilter())
+                ->applyTransformation(new StopWordsFilter($stopwords), false)
+                ->applyTransformation(new PunctuationFilter(['@',':','\/']), false)
+                ->applyTransformation(new CharFilter(), false);
+                
+        $rake = new Rake($tokenDoc, 2);
+        $results = $rake->getKeywordScores();
+        // $sort = asort($results);
+        
+        return $results;       
+    }
+
 ?>
