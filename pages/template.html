@@ -1,46 +1,52 @@
 <script id="signup" type="text/html">
 	<div class="jumbotron text-center">
 		<title>IREPORT: Signup</title>
-		<h1>SIGNUP</h1>
-	</div>
+		<h1>SIGN UP</h1><br><br>
 	<form id="myForms">
-		<div class="container">
+		<div class="container100"> <!--nilagay ko lang yung 100-->
+			<div class="form-group">
+				<label>Student Number:</label><br>
+				<input id="studnum" type="text" name="studnum" class="form-control" placeholder="Enter Student Number"><br>
+			</div>
 			<div class="form-group">
 				<label>Username:</label><br>
-				<input id="username" type="text" name="username" class="form-control" placeholder="Enter Username" value=""><br>
+				<input id="username" type="text" name="username" class="form-control" placeholder="Enter Username" ><br>
 			</div>
 			<div class="form-group">
 				<label>Name:</label><br>
-				<input id="name" type="text" name="name" class="form-control" placeholder="Enter Name" value=""><br>
+				<input id="name" type="text" name="name" class="form-control" placeholder="Enter Name"><br>
 			</div>
 			<div class="form-group">
 				<label>Course:</label><br>
-				<input id="course" type="text" name="course" class="form-control" placeholder="Enter Course" value="comsci"><br>
+				<input id="course" type="text" name="course" class="form-control" placeholder="Enter Course" ><br>
 			</div>
 			<div class="form-group">
 				<label>Email:</label><br>
-				<input id="email" type="text" name="email" class="form-control" placeholder="Enter Email" value="d@g.com"><br>
+				<input id="email" type="text" name="email" class="form-control" placeholder="Enter Email"><br>
 			</div>
 			<div class="form-group">
 				<label>Password:</label><br>
-				<input id="password" type="password" name="password" class="form-control" placeholder="Enter Password" value="dale"><br>
+				<input id="password" type="password" name="password" class="form-control" placeholder="Enter Password"><br>
 			</div>
 			<div class="form-group">
 				<label>Confirm Password:</label><br>
-				<input id="confirm-password" type="password" name="confirm-password" class="form-control" placeholder="Enter Confirm Password" value="dale"><br><br>
+				<input id="confirm-password" type="password" name="confirm-password" class="form-control" placeholder="Enter Confirm Password"><br><br>
 				<button type="submit" class="btn btn-success">Submit</button>
+
+					<br><br><hr class="style"><br>
+					<center><label>Already have an account? <a href="http://localhost/ireport/pages/index.html#/login"><u>Log In</u></a></label></center>
 			</div>
 		</div>
 	</form>
+	</div>
 </script>
 
 <script id="login" type="text/html">
 	<div class="jumbotron text-center">
 		<title>IREPORT: Login</title>
-		<h1>LOGIN</h1>
-	</div>
+		<h1>LOG IN</h1><br><br>
 	<form id="loginForms">
-		<div class="container">
+		<div class="container100"> <!--nilagay ko lang yung 100-->
 			<div class="form-group">
 				<label>Username:</label><br>
 				<input id="username" type="text" name="username" class="form-control" placeholder="Username"><br>
@@ -49,16 +55,54 @@
 				<label>Password:</label><br>
 				<input id="password" type="password" name="password" class="form-control" placeholder="Password"><br><br>
 				<button type="submit" class="btn btn-success">Submit</button>
+
+					<br><br><hr class="style"><br>
+					<center><label>For Department <a href="http://localhost/ireport/pages/index.html#/deptLogin"><u>Log In</u></a></label></center>
+					<center><label>Don't have an account? <a href="http://localhost/ireport/pages/index.html#/signup"><u>Sign Up</u></a></label></center>
+
+			</div>
+		</div>
+	</form>
+	</div>
+</script>
+
+<script id="dept_login" type="text/html">
+	<div class="jumbotron text-center">
+		<title>IREPORT: Department Login</title>
+		<h1>DEPARTMENT LOGIN</h1>
+	</div>
+	<form id="loginForms">
+		<div class="container">
+			<div class="form-group">
+				<label>Department Name:</label><br>
+				<input id="dept_name" type="text" name="dept_name" class="form-control" placeholder="Department Name"><br>
+			</div>
+			<div class="form-group">
+				<label>Password:</label><br>
+				<input id="dept_password" type="password" name="dept_password" class="form-control" placeholder="Department Password"><br><br>
+				<button type="submit" class="btn btn-success">Submit</button>
 			</div>
 		</div>
 	</form>
 </script>
 
 <script id="blog" type="text/html">
+
+<div id='cssmenu'>
+	<img class="logo" src="image/facebook_profile_image1.png" alt="Logo" style="width: 90px;height: 71px;">
+		<ul>
+			<li><a href="#"><img src="icon/icon-home-white.png" alt="Home" style="width: 30px;height: 31px;"><span>Home</span></a></li>
+			<li><a href="http://localhost/ireport/pages/index.html#/message"><img src="icon/icon-email-white.png" alt="Message" style="width: 30px;height: 31px;"><span>Message</span></a></li>
+			<li><a href="http://localhost/ireport/pages/index.html#/login"><img src="icon/icon-log-out.png" alt="Log Out" style="width: 30px;height: 31px;"><span>Log Out</span></a></li>
+		</ul>
+	</div>
+
 	<div class="header">
 		<title>IREPORT: Homepage</title>
 		<h1>Report Page</h1>
 		<button class="btn btn-success" data-toggle="modal" data-target="#myModal"> Create Post </button>
+		<button class="btn btn-danger" id="logout">Logout</button>
+		<button class="btn btn-info" id="message">Message</button>
 	</div>
 
 	<div id="myModal" class="modal fade" role="dialog">
@@ -68,7 +112,7 @@
 					<h3>Create Report</h3>
 					<span class="close" data-dismiss="modal">&times;</span>
 				</div>
-				<form id="post">
+				<form id="post" enctype="multipart/form-data">
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Report Title (optonal):</label>
@@ -78,9 +122,15 @@
 							<label>Report Content:</label>
 							<textarea id="blog_content" type="text" name="blog_content" class="form-control"></textarea>
 						</div>
+					<div class="form-group">
+						<label>Include Photo:</label>
+						<input id="uploadImage" type="file" accept="image/*" name="image" class="form-control-file">
+						<div id="preview"></div><br>
+					</div>
+					<div id="err"></div>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-success">Post</button>
+						<button type="submit" class="btn btn-success" value="Upload">Post</button>
 						<button class="btn btn-default" data-dismiss="modal">Cancel</button>
 					</div>
 				</form>
@@ -90,35 +140,24 @@
 
 	<div class="row">
 		<div class="leftcolumn">
+			<div class="result"></div>
 			<div id="output"></div>
-			<div class="card">
-				<h2>Title Heading</h2>
-	            <h5>Title description, Dec 07, 2017 </h5>
-	            <div class="fakeimg" style="height: 200px;">Image</div>
-	            <p>Some text..</p>
-	            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-			</div>
-			<div class="card">
-				<h2>Title Heading</h2>
-	            <h5>Title description, Dec 07, 2017 </h5>
-	            <div class="fakeimg" style="height: 200px;">Image</div>
-	            <p>Some text..</p>
-	            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-			</div>
 		</div>
 		<div class="rightcolumn">
 			<div class="card">
-				<h2>Search</h2>
-				<input type="text" id="search" placeholder="Enter keyword" class="form-control"><br>
+				<div class="search-box">
+					<h2>Search</h2>
+					<input type="text" placeholder="Enter keyword" class="form-control" /><br>
+				</div>
 			</div>
-			<div class="card">
+			<!-- <div class="card">
 				<h3>Sign In</h3>
 				<label>Username:</label>
 				<input type="text" name="username" id="username" placeholder="Enter Username" class="form-control">
 				<label>Password:</label>
 				<input type="password" name="password" id="password" placeholder="Enter Password" class="form-control">
 				<br>
-			</div>
+			</div> -->
 			<div class="card">
 				<h3>Popular Post</h3>
 		        <div class="fakeimg">Image</div><br>
@@ -126,13 +165,72 @@
 		        <div class="fakeimg">Image</div>
 			</div>
 			<div class="card">
-				<h3>Follow Me</h3>
-				<p>Some text..</p>
+				<h3>Category</h3>
+				<div id="category_list"></div>
 			</div>
 		</div>
 	</div>
 	<div class="footer">
-		<h2>Footer</h2>
+
+<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<center><img src="image/cvsu-logo.png" alt="Cvsu Logo" style="width: 115px;height: 100px;"></center>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Information</h3>
+							<ul class="footer-links">
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="privacy.html">Privacy Policy</a></li>
+								<li><a href="terms.html">Terms & Conditions</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="clearfix visible-xs"></div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Service</h3>
+							<ul class="footer-links">
+								<li><a href="#">My Account</a></li>
+								<li><a href="help.html">Help</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Follow Us @</h3>
+							<ul class="footer-links">
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Instagram</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<div id="bottom-footer" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<span class="copy-info">2019 Cavite State University</span>
+					<span class="sep"> | </span>
+						Indang, Cavite, Philippines	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 	</div>
 </script>
 
@@ -159,10 +257,6 @@
 	<div class="header">
 		<title>IREPORT: Report Display</title>
 		<h1>Report Display</h1>
-		<div id="functional" class="functional">
-			<button id="updateblog" class="btn btn-default">Updates</button>
-			<button id="deleteblog" class="btn btn-danger">Delete</button>
-		</div>
 	</div>
 	<div class="panel-body">
 		<div id="blogclickbyuser" align="center"></div>
@@ -170,16 +264,15 @@
 
 	<div class="panel-body">
 		<div id="blogcontent" class="col-md-12">
-			<div class="card">
-				{{#blog}}
-				<h1>{{title}}</h1>
-				<p>{{content}}</p>
+			<div  class="card">
+				<h1>Title: {{title}}</h1>
+				<p>Content: {{content}}</p>
+				<img id="show" src="../api/{{image}}" style="width: 100%; padding: 20px;">
 				<small>Authored by: <strong>{{author}}</strong></small>
 				<br>
 				<small>Date Created: {{dateCreated}}</small>
 				<br>
-				{{/blog}}
-			</div>
+			</div> 
 		</div>
 		<br>
 
@@ -189,6 +282,7 @@
 						<h3>Comments</h3>
 						<div id ="commentsbyuser"></div>
 						<textarea class="form-control" name ="commentsection" id ="commentsection" placeholder="Comments"></textarea>
+						<br>
 						<button id = "comment" type="submit" class="btn btn-primary" name="comment" col-md-6 align = "left">Comment</button>
 					</div>
 				</form>
@@ -220,10 +314,648 @@
 					<th>Content</th>
 					<th>Date Created</th>
 					<th>Date Modified</th>
-					<th>Action</th>
+					<th>View</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody></tbody>
 		</table>
+	</div>
+</script>
+
+<script id="category" type="text/html">
+	<div class="header">
+		<title>IREPORT: Category</title>
+		<h1 align="center" >Tag:  {{tag}}</h1>
+	</div>
+	<div class="row">
+		<div class="leftcolumn">
+			<div id="output"></div>
+		</div>
+	</div>
+</script>
+
+<script id="message" type="text/html">
+	<div class="header">
+		<title>IREPORT: Private Messaging</title>
+		<h3 align="center">Private Messaging</h3>
+		<button id="homepage" class="btn btn-success">Back to Homepage</button>
+		<button id="logout" class="btn btn-danger">Logout</button>
+		<button id="process" class="btn btn-info">Next Step</button>
+	</div>
+	<div class="container">
+		<h4 align="center">Departments</h4>
+			<table id="dept_message" class="table table-bordered table-striped">
+				<tr>
+					<th>Department Name</th>
+					<th>Action</th>
+				</tr>
+				<div id="user_details"></div>
+				<div id="user_model_details"></div>
+			</table>
+	</div>
+</script>
+
+<script id="dept_message" type="text/html">
+	<div class="header">
+		<title>IREPORT: Private Messaging</title>
+		<h3 align="center">Private Messaging</h3>
+		<button id="homepage" class="btn btn-success">Back to Homepage</button>
+		<button id="logout" class="btn btn-danger">Logout</button>
+		<button id="message_dept" class="btn btn-info">Message Department</button>
+	</div>
+	<div class="container">
+		<h4 align="center">Departments</h4>
+			<table id="dept_message" class="table table-bordered table-striped">
+				<tr>
+					<th>User</th>
+					<th>Action</th>
+				</tr>
+				<div id="user_details"></div>
+				<div id="user_model_details"></div>
+			</table>
+	</div>
+</script>
+
+<script id="dept_to_dept" type="text/html">
+	<div class="header">
+		<title>IREPORT: Private Messaging</title>
+		<h3 align="center">Private Messaging</h3>
+		<button id="homepage" class="btn btn-success">Back to Homepage</button>
+		<button id="logout" class="btn btn-danger">Logout</button>
+	</div>
+	<div class="container">
+		<h4 align="center">Departments</h4>
+			<table id="dept_message" class="table table-bordered table-striped">
+				<tr>
+					<th>Department Name</th>
+					<th>Action</th>
+				</tr>
+				<div id="user_details"></div>
+				<div id="user_model_details"></div>
+			</table>
+	</div>
+</script>
+
+<script id="prompt" type="text/html">
+	<div class="jumbotron text-center">
+		<div class="container100">
+			<title>IREPORT: Prompt</title>
+			<h3>Choose Action:</h3>
+			<br>
+			<button id="view" class="btn btn-primary btn-lg btn-block">View Homepage</button>
+			<br>
+			<br>
+			<button id="state" class="btn btn-primary btn-lg btn-block">State Report using Private Messaging</button>
+			<br>
+			<br>
+			<br>
+			<button id="email" class="btn btn-primary btn-lg btn-block">Send Report via Email</button>
+		</div>
+	</div>
+</script>
+
+<script id="homepage" type="text/html">
+
+<div id='cssmenu'>
+	<img class="logo" src="image/facebook_profile_image1.png" alt="Logo" style="width: 90px;height: 71px;">
+		<ul>
+			<li><a href="#"><img src="icon/icon-home-white.png" alt="Home" style="width: 30px;height: 31px;"><span>Home</span></a></li>
+			<li><a href="http://localhost/ireport/pages/index.html#/login"><img src="icon/icon-log-out.png" alt="Log Out" style="width: 30px;height: 31px;"><span>Sign In</span></a></li>
+		</ul>
+	</div>
+
+	<div class="header">
+		<title>IREPORT: Homepage</title>
+		<h2>Report Page</h2>
+	</div>
+
+	<div class="row">
+		<div class="leftcolumn">
+			<div id="output"></div>
+		</div>
+		<div class="rightcolumn">
+			<div class="card">
+				<h2>Search</h2>
+				<input type="text" id="search" placeholder="Enter keyword" class="form-control"><br>
+			</div>
+			<!-- <div class="card">
+				<h3>Sign In</h3>
+				<label>Username:</label>
+				<input type="text" name="username" id="username" placeholder="Enter Username" class="form-control">
+				<label>Password:</label>
+				<input type="password" name="password" id="password" placeholder="Enter Password" class="form-control">
+				<br>
+			</div> -->
+			<div class="card">
+				<h3>Popular Post</h3>
+		        <div class="fakeimg">Image</div><br>
+		        <div class="fakeimg">Image</div><br>
+		        <div class="fakeimg">Image</div>
+			</div>
+			<div class="card">
+				<h3>Follow Me</h3>
+				<p>Some text..</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<center><img src="image/cvsu-logo.png" alt="Cvsu Logo" style="width: 115px;height: 100px;"></center>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Information</h3>
+							<ul class="footer-links">
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="privacy.html">Privacy Policy</a></li>
+								<li><a href="terms.html">Terms & Conditions</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="clearfix visible-xs"></div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Service</h3>
+							<ul class="footer-links">
+								<li><a href="#">My Account</a></li>
+								<li><a href="help.html">Help</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Follow Us @</h3>
+							<ul class="footer-links">
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Instagram</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<div id="bottom-footer" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<span class="copy-info">2019 Cavite State University</span>
+					<span class="sep"> | </span>
+						Indang, Cavite, Philippines	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</script>
+
+<script id ="profile" type ="text/html">
+<title>IREPORT: Profile</title>
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center"><img src="../images/sample_pic.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Accordion -->
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+          <button onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="../images/sample_pic.png" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="../images/sample_pic.png" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="../images/sample_pic.png" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="../images/sample_pic.png" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="../images/sample_pic.png" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="../images/sample_pic.png" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+      
+      <!-- Interests --> 
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Interests</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">News</span>
+            <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
+            <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+            <span class="w3-tag w3-small w3-theme-d2">Games</span>
+            <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+            <span class="w3-tag w3-small w3-theme">Games</span>
+            <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+            <span class="w3-tag w3-small w3-theme-l2">Food</span>
+            <span class="w3-tag w3-small w3-theme-l3">Design</span>
+            <span class="w3-tag w3-small w3-theme-l4">Art</span>
+            <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+          </p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Alert Box -->
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>People are looking at your profile. Find out who.</p>
+      </div>
+    
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+    
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h3 class="w3-opacity"><b>Created Posts</b></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="post_on_profile"></div>
+      
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h3 class="w3-opacity"><b>Deleted Posts</b></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="deleted_post_on_profile"></div>
+      
+    </div>
+    <!-- End Middle Column -->
+
+    <div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Update Report</h3>
+					<span class="close" data-dismiss="modal">&times;</span>
+				</div>
+				<form id="post">
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Update Report Title:</label>
+							<input id="blog_title" type="text" name="blog_title" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Update Report Content:</label>
+							<textarea id="blog_content" type="text" name="blog_content" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success">Update</button>
+						<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+    
+    <!-- Right Column -->
+    <div class="w3-col m2">
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Upcoming Events:</p>
+          <img src="../images/sample_pic.png" alt="Forest" style="width:100%;">
+          <p><strong>Holiday</strong></p>
+          <p>Friday 15:00</p>
+          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Friend Request</p>
+          <img src="../images/sample_pic.png" alt="Avatar" style="width:50%"><br>
+          <span>Jane Doe</span>
+          <div class="w3-row w3-opacity">
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+            </div>
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+        <p>ADS</p>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+        <p><i class="fa fa-bug w3-xxlarge"></i></p>
+      </div>
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+<!-- </div> -->
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+  <h5>Footer</h5>
+</footer>
+
+<footer class="w3-container w3-theme-d5">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+</script>
+
+<script id="update_blog" type="text/html">
+	<title>IREPORT: Update Report</title>
+	<div class="w3-row">
+		<div class="w3-col m7">
+			<div class="w3-row-padding">
+		        <div class="w3-col m12">
+		          <div class="w3-card w3-round w3-white">
+		            <div class="w3-container w3-padding">
+		              	<h3 class="w3-opacity"><b>Update Report</b></h3>
+		              	<hr class="w3-clear">
+		              	<form id="update_form">
+			                <span class="w3-left w3-opacity">Update Report Title:</span>
+			              	<input id="update_title" type="text" name="update_title" class="form-control">
+			             	 <br>
+			              	<span class="w3-left w3-opacity">Update Report Content:</span>
+			              	<input id="update_content" type="text" name="update_content" class="form-control">
+			             	 <br>
+			              	<button type="submit" class="btn btn-success">Update</button>
+		             	</form>
+		            </div>
+		          </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</script>
+
+
+<script id="process" type="text/html">
+<title>IREPORT: Process</title>
+<a href="#" class="float">
+<i class="fa fa-plus my-float"></i>
+</a>
+
+<h1>Process</h1>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<table data-vertable="ver1">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1">Departments for certain concerns</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1"><a href="#Dept1">Security</a></td>
+							</tr>
+
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1"><a href="#Dept2">Guidance</a></td>
+							</tr>
+
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1"><a href="#Dept3">Gender and Development</a></td>
+							</tr>
+
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1"><a href="#Dept4">Central Student Government</a></td>
+							</tr>
+
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1"><a href="#Dept5">Office of Student Affairs and Services</a></td>
+							</tr>
+
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1"><a href="#Dept6">Administration</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<br><br>
+				<hr>
+				<br><br>
+
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1"><h3 id="Dept1">Security</h3></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">
+								<p>For concerns like "<strong>loss of id</strong>", "<strong>loss of belongings</strong>", the student can go directly to <strong>Private Messaging</strong> to notify the Security.</p><br>
+								<p>Step by step process on how Security solve the student's problems and/or concerns:</p><br>
+								<ol type="1">
+									<li>Report for warning if the violation was offended 3 times;</li>
+									<li>Then the student will be reported to the college dean; and</li>
+									<li>Then if not resolve by the dean then it will proceed with OSAS.</li>
+								</ol>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<br><br>
+				<hr>
+				<br><br>
+
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1"><h3 id="Dept2">Guidance</h3></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">
+								<p>For complains like "<strong>bullying</strong>", "<strong>violence</strong>", "<strong>sexual harassment</strong>", the complainant can go directly to <strong>Private Messaging</strong> to send a message to notify the Guidance.</p><br>
+								<p>Step by step process on how Guidance solve the student's problems and/or concerns:</p><br>
+								<ol type="1">
+									<li>Define the problem.</li>
+									<li>Address the problem to the personnel concerned.</li>
+									<li>Apply the necessary intervention.</li>
+								</ol>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<br><br>
+				<hr>
+				<br><br>
+
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1"><h3 id="Dept3">Gender and Development</h3></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1"><p>For complains like "<strong>cat calling</strong>", "<strong>sexual harassment</strong>", the complainant can go directly to <strong>Private Messaging</strong> to send a message to notify the Gender and Development (GAD).</p><br>
+								<p>Step by step process on how Gender and Development (GAD) solve the student's problems and/or concerns:</p><br>
+								<ol type="a">
+									<li>Complaint</li>
+										<ol type="1" id="number">
+											<li>The complaint may be filed with the university president or with the CODI. Upon receipt of the complaint by the university president, the same shall be transmitted by the CODI. The complaint must be in writing, signed and sworn to by the complaint and contain the following:</li>
+										</ol>
+											<ol type="i" id="roman">
+												<li>the full name and address of the complaint;</li>
+												<li>the full name, address, and position of the respondent;</li>
+												<li>a brief statement of the relevant facts;</li>
+												<li>evidence in support of the complaint, if any; and</li>
+												<li>a certification of non - forum shopping;</li>
+											</ol>
+									<li>Action on the complaint</li>
+									<li>Preliminary investigation</li>
+									<li>Investigation report</li>
+									<li>Decision or resolution</li>
+									<li>Formal charge</li>
+									<li>Answer</li>
+									<li>Failure to file answer</li>
+								</ol>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<br><br>
+				<hr>
+				<br><br>
+
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1"><h3 id="Dept4">Central Student Government</h3></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">
+								<p>For concerns like "<strong>dresscode</strong>", "<strong>garbage in/out policy</strong>", "<strong>academics</strong>", the student can go directly to <strong>Private Messaging</strong> to send a message to notify the Central Student Government (CSG).</p><br>
+								<p>Step by step process on how Central Student Government (CSG) solve the student's problems and/or concerns:</p><br>
+								<ol type="1">
+									<li>If the concern is between the students;</li>
+										<ol type="a" id="letter">
+											<li>the officers of the CSG will discuss the concerns; and</li>
+											<li>then we determine the scope and involvement of the students.</li>
+										</ol>
+									<li>If the concern is between the student and professor;</li>
+										<ol type="a" id="letter">
+											<li>we direct the complainant to the OSAS;</li>
+											<li>they will be the one who will call the attention of the professor and discuss it with the OVPAA.</li>
+										</ol>
+								</ol>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<br><br>
+				<hr>
+				<br><br>
+
+				<div class="table100 ver2 m-b-110">
+					<table data-vertable="ver2">
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1"><h3 id="Dept5">Office of Student Affairs and Services</h3></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row100">
+								<td class="column100 column1" data-column="column1">
+								<p>For complains like "<strong>cat calling</strong>", "<strong>bullying</strong>", "<strong>violence</strong>", "<strong>sexual harassment</strong>", the complainant can go directly to <strong>Private Messaging</strong> to send a message to notify the Office of Student Affairs and Services (OSAS).</p><br>
+								<p>Step by step process on how Office of Student Affairs and Services (OSAS) solve the student's problems and/or concerns:</p><br>
+								<ol type="a">
+									<li>We do referral if the concern is outside of our expertise of jurisdiction:</li>
+										<ol type="1" id="number">
+											<li>Schedule of counseling.</li>
+											<li>Written form (counseling form) for the schedule session of the counseling.</li>
+											<li>Counseling.</li>
+										</ol>
+								</ol>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
 </script>
