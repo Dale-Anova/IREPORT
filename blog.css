@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+/*for process.html*/
+
+
+
 /* Add a gray background color with some padding */
 body {
   font-family: Arial;
@@ -10,26 +14,261 @@ body {
   background: #f1f1f1;
 }
 
-/* Header/Blog Title */
+/*profile*/
+body {
+  padding-top:30px;
+}
+
+.glyphicon {  
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+
+/*/// Log In ///*/
+.jumbotron {
+  width: 50%;
+  margin: 0 auto;
+  background-color: transparent;
+}
+.container100 {
+  width: 100%;  
+  min-height: 50vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin-top: 10px;
+}
+.form-group {
+  width: 560px;
+  border-radius: 10px;
+  position: relative;
+  line-height: 1.2;
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+
+/* Input */
+.form-control {
+  color: #555555;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 55px;
+  padding: 0 25px 0 25px;
+}
+
+
+/*/// Top Navigation Bar ///*/
+#cssmenu ul,
+#cssmenu li,
+#cssmenu span,
+#cssmenu a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#cssmenu {
+  line-height: 1;
+  background: #006400;
+  width: auto;
+}
+#cssmenu:after,
+#cssmenu ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#cssmenu a {
+  background: #006400;
+  color: #ffffff;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+#cssmenu ul {
+  list-style: none;
+  float: right;
+}
+#cssmenu > ul > li {
+  display: inline-block;
+  float: left;
+  margin: 0;
+}
+#cssmenu > ul > li > a {
+  color: #ffffff;
+  font-size: 14px;
+}
+#cssmenu > ul > li:hover:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #adff2f;
+  margin-left: -10px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a {
+  color: #ffffff;
+  background: #008000;
+}
+#cssmenu .has-sub {
+  z-index: 1;
+}
+#cssmenu .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub ul {
+  display: none;
+  position: absolute;
+  width: 170px;
+  top: 100%;
+  left: 0;
+}
+#cssmenu.align-right .has-sub ul {
+  left: auto;
+  right: 0;
+}
+#cssmenu .has-sub ul li {
+  *margin-bottom: -1px;
+}
+#cssmenu .has-sub ul li a {
+  background: #006400;
+  border-bottom: 1px dotted #ffffff;
+  font-size: 12px;
+  filter: none;
+  display: block;
+  line-height: 120%;
+  padding: 10px;
+  color: #ffffff;
+}
+#cssmenu .has-sub ul li:hover a {
+  background: #008000;
+}
+#cssmenu ul ul li:hover > a {
+  color: #ffffff;
+}
+
+
+/* Top Navigation Bar/Search Box */ 
+.topnav input[type=text] {
+  float: left;
+  padding: 6px;
+  border: none;
+  margin-top: 20px;
+  margin-left: 19px;
+  font-size: 17px;
+}
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+
+/* Button sign in with ...*/
+.btn-face,
+.btn-google {
+  line-height: 1.2;
+
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  width: calc((100% - 20px) / 2);
+  height: 70px;
+}
+.btn-face {
+  color: #ffffff;
+  background-color: #3b5998;
+  margin-right: 20px;
+}
+.btn-face img {
+  width: 30px;
+  margin-right: 15px;
+  padding: 5px;
+  background-color: #ffffff;
+}
+.btn-google {
+  color: #ffffff;
+  background-color: #4285f4;
+}
+.btn-google img {
+  width: 30px;
+  margin-right: 15px;
+  padding: 5px;
+  background-color: #ffffff;
+}
+.btn-face:hover,
+.btn-google:hover {
+  color: #adff2f;
+}
+
+
+/*/// Header/Blog Title ///*/
 .header {
   padding: 30px;
   font-size: 40px;
   text-align: center;
   background: white;
+  margin-bottom: 30px;
 }
 
+
+/*/// Blog Post ///*/
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {   
   float: left;
   width: 75%;
+  /*padding-left: 20px;*/
 }
 
+/*.middlecolumn {
+  float: left;
+  width: 10%;
+
+}
+*/
 /* Right column */
 .rightcolumn {
   float: left;
   width: 25%;
   padding-left: 20px;
+}
+
+.button {
+  width: 50px;
+  color: white;
+  text-align: center;
+  margin: 10px;
 }
 
 /* Fake image */
@@ -39,12 +278,76 @@ body {
   padding: 20px;
 }
 
+
 /* Add a card effect for articles */
 .card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  border-color: white;
 }
+
+/*voting design*/
+#main {
+  height:150px;
+  margin:20px auto;
+  width:570px; 
+  background:#fff
+}
+
+.up { 
+  height:36px; 
+  width:56px; 
+  font-size:18px; 
+  text-align:center; 
+  background:#00AF09; 
+  margin-bottom:2px; 
+  margin:10px auto
+}
+.up a { 
+  color:#fff;
+  text-decoration:none; 
+  line-height:1.8em
+}
+
+.down { 
+  height:36px; 
+  width:56px; 
+  font-size:18px; 
+  text-align:center; 
+  background:#EC383B; 
+  margin-bottom:2px; 
+  margin:10px auto; 
+  margin-top:20px
+}
+.down a { 
+  color:#FFFFFF;
+  text-decoration:none; 
+  line-height:1.8em
+}
+
+.box1 {
+  float:left; 
+  height:40px; 
+  width:100px; 
+  color:#000
+}
+
+.box2 {
+  float:left; 
+  width:400px; 
+  text-align:left;
+  margin-left:30px;
+  height:60px;
+  margin-top:10px;
+  font-size:16px; 
+  color:#fff; 
+}
+/*voting design end*/
+/*img {border:none;padding-top:7px;}*/
+
 
 /* Clear floats after the columns */
 .row:after {
@@ -53,13 +356,64 @@ body {
   clear: both;
 }
 
-/* Footer */
+
+/*/// Footer ///*/
 .footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
+  background: #006400;
+  color: #b9babc;
+  margin: 30px 0px;
 }
+#bottom-footer {
+  background: #008000;
+}
+.footer-links li+li {
+  margin-top: 5px;
+}
+.footer-links li a {
+  color: #ffffff;
+}
+.footer-links li a:hover {
+  color: #adff2f;
+}
+
+.footer > ul > li {
+  display: block;
+  margin-left: -10px;
+
+
+/*/// Horizontal Rule ///*/
+hr.style {
+  padding: 0;
+  border: none;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  color: #333;
+  text-align: center;
+}
+hr.style:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.2em;
+  padding: 0 0.25em;
+  background: #f1f1f1;
+}
+
+
+/*login/signup button*/
+.form-group button {
+  width: 460px;
+}
+
+/*ireport logo*/
+.logo {
+  margin-left: 10px;
+}
+
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
